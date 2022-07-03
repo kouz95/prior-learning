@@ -5,5 +5,5 @@ import reactor.core.publisher.Mono
 interface LoginUseCase {
     fun login(code: String): Mono<LoginResult>
 
-    data class LoginResult(val token: String)
+    data class LoginResult(val id: Long)
 }

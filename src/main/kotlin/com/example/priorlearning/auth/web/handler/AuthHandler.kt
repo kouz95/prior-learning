@@ -19,9 +19,9 @@ class AuthHandler(private val loginUseCase: LoginUseCase) {
                     .body(BodyInserters.fromValue(it))
             }
 
-    data class Response(private val token: String) {
+    data class Response(val id: Long) {
         companion object {
-            fun of(result: LoginUseCase.LoginResult): Response = Response(result.token)
+            fun of(result: LoginUseCase.LoginResult): Response = Response(result.id)
         }
     }
 }
